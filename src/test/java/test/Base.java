@@ -29,12 +29,14 @@ import org.junit.internal.AssumptionViolatedException;
 
 class Base {
 
+	static int x = 1;
+
     protected void run() {
-        double r = Math.random();
-        if (r < 0.1) {
+    	System.out.println("--- run ---");
+
+        x++;
+        if (x <= 10) {
             fail("oops");
-        } else if (r < 0.2) {
-            throw new AssumptionViolatedException("skipping");
         }
     }
 
